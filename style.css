@@ -1,0 +1,98 @@
+
+@font-face {
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800px;
+    font-style: normal;
+    src: url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
+}
+
+
+
+body {
+    
+    background-color: #ba4949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+.pomodoro-container {
+    background-color: #c15c5cc2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    margin-top: 60px; /* Ajuste cette valeur pour ne pas chevaucher le menu */
+}
+
+h1 {
+    color:rgb(242, 222, 161) ; /* Mets la couleur de ton choix */
+}
+
+
+
+#timer-display {
+    font-size: 48px;
+    margin: 20px 0;
+    color: rgb(242, 222, 161);
+}
+
+button {
+    background-color: #ba4949;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff6b6b;
+}
+
+#pause-btn {
+    background-color: #ffb800;
+}
+
+#reset-btn {
+    background-color: #4caf50;
+}
+
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+form input {
+    width: 50px;
+    padding: 5px;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
