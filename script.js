@@ -36,6 +36,7 @@ function startTimer() {
   }
 }
 
+
 function resetTimer() {
   clearInterval(timerInterval);
   isRunning = false;
@@ -48,10 +49,15 @@ function resetTimer() {
 startResetButton.addEventListener('click', () => {
   if (isRunning) {
     resetTimer();
+    startResetButton.innerHTML = '<span class="fa-solid fa-play fa-bounce"></span>';
   } else {
     startTimer();
+    phaseDisplay.innerHTML = "Phase de travail";
+    startResetButton.innerHTML = '<span class="fa-solid fa-arrow-rotate-left fa-bounce"></span>';
   }
 });
+
+'<i class="fa-solid fa-pause fa-bounce"></i>'
 
 updateTimerDisplay();
 
