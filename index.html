@@ -10,23 +10,29 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Conteneur du titre avec l'icône à droite -->
   <div class="title-container heartbeat">
-    <h1>Pomodoro Timer <div class="tooltip"><em class="fas fa-cog" id="settings-icon" alt="Reglage Pomodoro" > <span class="tooltiptext">Reglages</span></em></div></div></h1>
-      
- 
-   
+    <div class="title-flex">
+      <h1>Pomodoro Timer</h1>
+      <!-- Icône et tooltip à droite du titre -->
+      <div class="tooltip">
+        <em class="fas fa-cog" id="settings-icon" alt="Reglage Pomodoro">
+          <span class="tooltiptext">Réglages</span>
+        </em>
+      </div>
+    </div>
   </div>
+
   <div class="container">
- 
-    
-    <!-- Icône pour afficher la bulle de dialogue -->
-    
+    <!-- Timer et phase -->
     <div id="timer">25:00</div>
-    
     <div id="phase">Phase de travail</div>
   </div>
-  <button id="start-reset"><span class="fa-solid fa-play fa-bounce "></span></button>
 
+  <!-- Bouton Démarrer/Réinitialiser -->
+  <button id="start-reset">
+    <span class="fa-solid fa-play fa-bounce"></span>
+  </button>
 
   <!-- Fenêtre modale pour le formulaire -->
   <div id="settings-modal" class="modal hidden">

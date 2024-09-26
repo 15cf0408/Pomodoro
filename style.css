@@ -12,7 +12,40 @@ body {
     margin: 0;
     background-color: #b84343;
 }
+/* Conteneur du titre avec flexbox */
+.title-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Le texte à gauche, l'icône à droite */
+  width: 100%; /* S'assure que l'alignement prend toute la largeur disponible */
+}
 
+/* Styles pour le titre */
+.title-flex h1 {
+  font-size: 36px;
+  color: #ffffff;
+  margin: 0; /* Supprime le margin par défaut pour un meilleur alignement */
+}
+
+/* Icône de réglages */
+.tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+#settings-icon {
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Ajustement de l'icône au hover */
+#settings-icon:hover {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
 /* Conteneur central */
 .container {
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
