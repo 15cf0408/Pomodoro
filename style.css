@@ -1,6 +1,6 @@
 /* Typographie générale */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,8 @@ body {
     text-align: center;
     background-color: #e670703a;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 220px;
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
     width: 350px;
   }
@@ -23,6 +24,7 @@ body {
   #timer {
     font-size: 64px;
     color: #ffffff;
+    font-weight: bold;
     margin: 20px 0;
   }
   
