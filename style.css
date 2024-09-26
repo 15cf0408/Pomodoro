@@ -1,5 +1,8 @@
+/* --- Styles par défaut (pour les ordinateurs) --- */
+
 /* Typographie générale */
 body {
+   
     font-family: 'Roboto Mono', monospace;
     display: flex;
     flex-direction: column; /* Aligne les éléments verticalement */
@@ -19,32 +22,34 @@ body {
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.658);
     height: 600px;
     width: 600px;
-    display: flex; /* Ajouté pour centrer le contenu */
-    flex-direction: column; /* Aligne le contenu verticalement */
-    justify-content: center; /* Centre le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
 }
 
 /* Titre agrandi */
 .title-container h1 {
-    font-size: 36px; /* Agrandit la taille du titre */
-    color: #ffffff; /* Couleur du titre */
-    margin-bottom: 20px; /* Espace sous le titre */
+ 
+    font-size: 36px;
+    color: #ffffff;
+   
 }
 
 /* Timer */
 #timer {
     display: flex;
     align-items: center;
-    font-size: 100px; /* Taille de la police modifiée pour le centrage */
+    font-size: 100px;
     color: #ffffff;
     font-weight: bold;
 }
 
 /* Bouton de démarrage/réinitialisation */
 button {
-    padding: 20px 40px; /* Agrandissement du bouton */
-    font-size: 24px; /* Agrandit la taille du texte */
+    padding: 20px 40px;
+    font-size: 24px;
     background-color: #eee08e;
     color: rgb(0, 0, 0);
     border: none;
@@ -52,25 +57,52 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3);
-    margin-top: 20px; /* Espace au-dessus du bouton */
+    margin-top: 20px;
 }
 
-/* Responsive Design */
+/* Icône des paramètres */
+#settings-icon {
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* --- Styles spécifiques pour mobile --- */
 @media (max-width: 768px) {
-    #timer {
-        font-size: 48px; /* Ajustement pour mobile */
+    /* Ajustement du conteneur */
+    .container {
+        height: 300px;
+        width: 300px;
+        padding: 20px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     }
 
-    button {
-        font-size: 18px; /* Ajustement pour mobile */
-        padding: 15px 30px; /* Ajustement pour mobile */
-    }
-
+    /* Titre plus petit */
     .title-container h1 {
-        font-size: 24px; /* Ajustement pour mobile */
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* Timer plus petit */
+    #timer {
+        font-size: 48px;
+    }
+
+    /* Ajustement du bouton */
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+
+    /* Ajustement de l'icône des paramètres */
+    #settings-icon {
+        font-size: 20px;
+        margin-top: 10px;
     }
 }
-  
+
   /* Phase de travail ou pause */
   #phase {
     font-size: 24px;
@@ -210,8 +242,8 @@ button {
     position: absolute;
     top: 15px;
     right: 20px;
-    color: #333;
-    font-size: 24px;
+    color: #ffffff;
+    font-size: 50px;
     font-weight: bold;
     cursor: pointer;
   }
@@ -220,4 +252,43 @@ button {
     color: #ff5e57;
   }
   
+  /* Tooltip container */
+.tooltip {
+   
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
   
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    
+    visibility: hidden;
+    width: 150px;
+    background-color: #55555577;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    
+  
+    /* Position the tooltip text */
+    transform: rotate(-90deg);
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    margin-left: -60px;
+  
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.7s;
+  }
+  
+ 
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    
+    visibility: visible;
+    opacity: 1;
+  }
