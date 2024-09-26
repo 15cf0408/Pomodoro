@@ -15,6 +15,8 @@ body {
 
 /* Conteneur central */
 .container {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+  animation: heartbeat 1.5s ease-in-out infinite both;
     text-align: center;
     background-color: #e670703a;
     padding: 40px;
@@ -291,4 +293,8 @@ button {
     
     visibility: visible;
     opacity: 1;
+  }
+
+  .heartbeat {
+   
   }

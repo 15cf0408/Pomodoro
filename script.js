@@ -26,13 +26,15 @@ function startTimer() {
         if (isWorkPhase) {
           time = breakTime;
           phaseDisplay.textContent = "Pause";
+          document.body.style.backgroundColor = "#99c5c4"; // Rouge pendant le travai
         } else {
           time = workTime;
           phaseDisplay.textContent = "Phase de travail";
+          document.body.style.backgroundColor = "#b84343"; // Rouge pendant le travai
         }
         isWorkPhase = !isWorkPhase;
       }
-    }, 1000);
+    }, 100);
   }
 }
 
@@ -44,6 +46,7 @@ function resetTimer() {
   time = workTime;
   updateTimerDisplay();
   phaseDisplay.textContent = "Phase de travail";
+  document.body.style.backgroundColor = "#b84343";
 }
 
 startResetButton.addEventListener('click', () => {
@@ -54,10 +57,11 @@ startResetButton.addEventListener('click', () => {
     startTimer();
     phaseDisplay.innerHTML = "Phase de travail";
     startResetButton.innerHTML = '<span class="fa-solid fa-arrow-rotate-left fa-bounce"></span>';
+    document.body.style.backgroundColor = "#b84343";
   }
 });
 
-'<i class="fa-solid fa-pause fa-bounce"></i>'
+
 
 updateTimerDisplay();
 
