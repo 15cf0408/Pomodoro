@@ -1,98 +1,178 @@
-
-@font-face {
-    font-family: "Playpen Sans", cursive;
-    font-optical-sizing: auto;
-    font-weight: 800px;
-    font-style: normal;
-    src: url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
-}
-
-
-
+/* Typographie générale */
 body {
-    
-    background-color: #ba4949;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    
-}
+    background-color: #b84343;
+  }
+  
+  /* Conteneur central */
+  .container {
+    text-align: center;
+    background-color: #e670703a;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+    width: 350px;
+  }
+  
+  /* Timer */
+  #timer {
+    font-size: 64px;
+    color: #ffffff;
+    margin: 20px 0;
+  }
+  
+  /* Phase de travail ou pause */
+  #phase {
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 10px ;
+    margin-bottom: 20px;
+  }
+  
+  /* Bouton de démarrage/réinitialisation */
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #eee08e;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3);
+  }
+  
+  button:hover {
+    background-color: #ff3b30;
+    box-shadow: 0 6px 12px rgba(255, 59, 48, 0.4);
+  }
+  
+  /* Formulaire de personnalisation */
+  form {
+    margin-top: 20px;
+  }
+  
+  label, input {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+  }
+  
+  label {
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #timer {
+      font-size: 48px;
+    }
+  
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  i.fas.fa-cog {
+    font-size: 20px;
+    color: #333;
+    margin-right: 10px;
+  }
+  /* Cacher le formulaire au départ */
+.hidden {
+    display: none;
+  }
+  
+  /* Animation pour faire apparaître le formulaire */
+  form {
+    margin-top: 20px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+  }
+  
+  /* Icône de réglages */
+  #settings-icon {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  #settings-icon:hover {
+    transform: rotate(90deg);
+  }
+  
 
-.pomodoro-container {
-    background-color: #c15c5cc2;
+ /* Styles pour la fenêtre modale */
+.modal {
+    display: none; /* Cachée par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Contenu de la modale */
+  .modal-content {
+    background-color: #963a3a;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
-    margin-top: 60px; /* Ajuste cette valeur pour ne pas chevaucher le menu */
-}
-
-h1 {
-    color:rgb(242, 222, 161) ; /* Mets la couleur de ton choix */
-}
-
-
-
-#timer-display {
-    font-size: 48px;
-    margin: 20px 0;
-    color: rgb(242, 222, 161);
-}
-
-button {
-    background-color: #ba4949;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #ff6b6b;
-}
-
-#pause-btn {
-    background-color: #ffb800;
-}
-
-#reset-btn {
-    background-color: #4caf50;
-}
-
-
-form {
-    margin-bottom: 20px;
-}
-
-form label {
-    margin-right: 10px;
-    font-size: 18px;
+  }
+  
+  /* Bouton de fermeture */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
     color: #333;
-}
-
-form input {
-    width: 50px;
-    padding: 5px;
-    margin-right: 20px;
-    font-size: 16px;
-}
-
-form button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
-}
-
-form button:hover {
-    background-color: #45a049;
-}
+  }
+  
+  .close:hover {
+    color: #ff5e57;
+  }
+  
+  
