@@ -7,18 +7,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <div class="title-container"><h1>Pomodoro Timer</h1></div>
+  
   <div class="container">
-    <h1>Pomodoro Timer</h1>
+ 
+    
     <!-- Icône pour afficher la bulle de dialogue -->
     <em class="fas fa-cog" id="settings-icon"></em>
     <div id="timer">25:00</div>
-    <button id="start-reset">Démarrer / Réinitialiser</button>
-    <div id="phase">Phase de travail</div>
-
     
+    <div id="phase">Phase de travail</div>
   </div>
+  <button id="start-reset">Démarrer / Réinitialiser</button>
+
 
   <!-- Fenêtre modale pour le formulaire -->
   <div id="settings-modal" class="modal hidden">
@@ -37,6 +41,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  
 </body>
 </html>
