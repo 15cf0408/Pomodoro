@@ -34,7 +34,7 @@ function startTimer() {
         }
         isWorkPhase = !isWorkPhase;
       }
-    }, 100);
+    }, 1000);
   }
 }
 
