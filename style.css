@@ -1,33 +1,34 @@
-/* --- Styles par défaut (pour les ordinateurs) --- */
+/* --- Default styles (for desktop) --- */
 
-/* Typographie générale */
+/* General typography */
 body {
-   
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: column; /* Aligne les éléments verticalement */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #b84343;
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column; /* Align elements vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #b84343; /* Default background color (red for work phase) */
 }
-/* Conteneur du titre avec flexbox */
+
+/* Title container using flexbox */
 .title-flex {
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Le texte à gauche, l'icône à droite */
-  width: 100%; /* S'assure que l'alignement prend toute la largeur disponible */
+  justify-content: space-between; /* Text on the left, icon on the right */
+  width: 100%; /* Ensures full width for alignment */
 }
 
-/* Styles pour le titre */
+/* Styles for the title */
 .title-flex h1 {
   font-size: 36px;
   color: #ffffff;
-  margin: 0; /* Supprime le margin par défaut pour un meilleur alignement */
+  margin: 0; /* Removes default margin for better alignment */
 }
 
-/* Icône de réglages */
+/* Settings icon */
 .tooltip {
   display: flex;
   align-items: center;
@@ -35,299 +36,299 @@ body {
   margin-left: 20px;
 }
 
+/* Settings icon size and color */
 #settings-icon {
   font-size: 24px;
   color: #ffffff;
   cursor: pointer;
 }
 
-/* Ajustement de l'icône au hover */
+/* Rotate icon when hovered */
 #settings-icon:hover {
   transform: rotate(90deg);
   transition: transform 0.3s ease;
 }
-/* Conteneur central */
+
+/* Central container for timer */
 .container {
   -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
   animation: heartbeat 1.5s ease-in-out infinite both;
-    text-align: center;
-    background-color: #e670703a;
-    padding: 40px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.658);
-    height: 600px;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1/1;
+  text-align: center;
+  background-color: #e670703a; /* Semi-transparent background for container */
+  padding: 40px;
+  border-radius: 50%; /* Rounded container */
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.658); /* Shadow effect */
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1; /* Maintains a square ratio */
 }
 
-/* Titre agrandi */
+/* Enlarged title */
 .title-container h1 {
- 
-    font-size: 36px;
-    color: #ffffff;
-   
+  font-size: 36px;
+  color: #ffffff;
 }
 
-/* Timer */
+/* Timer display */
 #timer {
-    display: flex;
-    align-items: center;
-    font-size: 100px;
-    color: #ffffff;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 100px; /* Large font for the timer */
+  color: #ffffff;
+  font-weight: bold;
 }
 
-/* Bouton de démarrage/réinitialisation */
+/* Start/Reset button styling */
 button {
-    padding: 20px 40px;
-    font-size: 24px;
-    background-color: #eee08e;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3);
-    margin-top: 20px;
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: #eee08e; /* Button color */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3); /* Button shadow */
+  margin-top: 20px;
 }
 
-/* Icône des paramètres */
+/* Settings icon adjustments for mobile */
 #settings-icon {
-    font-size: 24px;
-    color: #ffffff;
-    cursor: pointer;
-    margin-top: 20px;
+  font-size: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-/* --- Styles spécifiques pour mobile --- */
+/* --- Specific styles for mobile devices --- */
 @media (max-width: 768px) {
-    /* Ajustement du conteneur */
-    .container {
-        height: 300px;
-        width: 300px;
-        padding: 20px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    }
+  /* Adjusting the container size */
+  .container {
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5); /* Smaller shadow for mobile */
+  }
 
-    /* Titre plus petit */
-    .title-container h1 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+  /* Smaller title for mobile */
+  .title-container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 
-    /* Timer plus petit */
-    #timer {
-        font-size: 48px;
-    }
+  /* Smaller timer for mobile */
+  #timer {
+    font-size: 48px;
+  }
 
-    /* Ajustement du bouton */
-    button {
-        font-size: 18px;
-        padding: 10px 20px;
-        margin-top: 10px;
-    }
+  /* Adjust button size for mobile */
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
 
-    /* Ajustement de l'icône des paramètres */
-    #settings-icon {
-        font-size: 20px;
-        margin-top: 10px;
-    }
+  /* Adjust settings icon size for mobile */
+  #settings-icon {
+    font-size: 20px;
+    margin-top: 10px;
+  }
 }
 
-  /* Phase de travail ou pause */
-  #phase {
-    font-size: 24px;
-    color: #ffffff;
-    margin-top: 10px ;
-    margin-bottom: 20px;
+/* Phase display (work or break) */
+#phase {
+  font-size: 24px;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Start/Reset button additional styles */
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #eee08e;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3);
+}
+
+/* Hover effect for button */
+button:hover {
+  background-color: #ff3b30;
+  box-shadow: 0 6px 12px rgba(255, 59, 48, 0.4);
+}
+
+/* Settings form styling */
+form {
+  margin-top: 20px;
+}
+
+label,
+input {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+
+/* Label styling */
+label {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Input field styling */
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Submit button in the form */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Hover effect for submit button */
+button[type="submit"]:hover {
+  background-color: #45a049;
+  box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+}
+
+/* Responsive design adjustments for small screens */
+@media (max-width: 768px) {
+  #timer {
+    font-size: 48px;
   }
-  
-  /* Bouton de démarrage/réinitialisation */
+
   button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #eee08e;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(255, 94, 87, 0.3);
-  }
-  
-  button:hover {
-    background-color: #ff3b30;
-    box-shadow: 0 6px 12px rgba(255, 59, 48, 0.4);
-  }
-  
-  /* Formulaire de personnalisation */
-  form {
-    margin-top: 20px;
-  }
-  
-  label, input {
-    display: block;
-    text-align: left;
-    margin: 10px 0;
-  }
-  
-  label {
-    color: #ffffff;
     font-size: 16px;
+    padding: 10px 20px;
   }
-  
-  input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-sizing: border-box;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    #timer {
-      font-size: 48px;
-    }
-  
-    button {
-      font-size: 16px;
-      padding: 10px 20px;
-    }
-  }
-  i.fas.fa-cog {
-    font-size: 20px;
-    color: #333;
-    margin-right: 10px;
-  }
-  /* Cacher le formulaire au départ */
+}
+
+/* Additional styles for the settings icon */
+i.fas.fa-cog {
+  font-size: 20px;
+  color: #333;
+  margin-right: 10px;
+}
+
+/* Hidden form by default */
 .hidden {
-    display: none;
-  }
-  
-  /* Animation pour faire apparaître le formulaire */
-  form {
-    margin-top: 20px;
-    transition: opacity 0.5s ease, max-height 0.5s ease;
-  }
-  
-  /* Icône de réglages */
-  #settings-icon {
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: transform 0.3s ease;
-  }
-  
-  #settings-icon:hover {
-    transform: rotate(90deg);
-  }
-  
+  display: none;
+}
 
- /* Styles pour la fenêtre modale */
+/* Animation to make the form appear smoothly */
+form {
+  margin-top: 20px;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+/* Settings icon styling */
+#settings-icon {
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate settings icon on hover */
+#settings-icon:hover {
+  transform: rotate(90deg);
+}
+
+/* Styles for the modal window */
 .modal {
-    display: none; /* Cachée par défaut */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Contenu de la modale */
-  .modal-content {
-    background-color: #963a3a;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-  }
-  
-  /* Bouton de fermeture */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #ff5e57;
-  }
-  
-  /* Tooltip container */
-.tooltip {
-   
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-  }
-  
-  /* Tooltip text */
-  .tooltip .tooltiptext {
-    
-    visibility: hidden;
-    width: 150px;
-    background-color: #55555577;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    
-  
-    /* Position the tooltip text */
-    transform: rotate(-90deg);
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    margin-left: -60px;
-  
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 0.7s;
-  }
-  
- 
-  
-  /* Show the tooltip text when you mouse over the tooltip container */
-  .tooltip:hover .tooltiptext {
-    
-    visibility: visible;
-    opacity: 1;
-  }
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
 
-  .heartbeat {
-   
-  }
+/* Modal content styling */
+.modal-content {
+  background-color: #963a3a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Close button for the modal */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hover effect for the close button */
+.close:hover {
+  color: #ff5e57;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* Optional dotted underline */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #55555577;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  
+  /* Positioning the tooltip */
+  transform: rotate(-90deg);
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  margin-left: -60px;
+  
+  /* Tooltip fade-in effect */
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+
+/* Show the tooltip text when hovering over the container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+  <!-- Basic metadata and links to external resources -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Author: T.C,Pomodoro Timer">
   <title>Pomodoro Timer</title>
+  <!-- Google Font 'Roboto' -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- JavaScript file, deferred to load after HTML -->
   <script defer src="script.js"></script>
+  <!-- <script defer src="script.js"></script> 
+   for the Version 2 -->
 </head>
+
 <body>
-  <!-- Conteneur du titre avec l'icône à droite -->
-  <div class="title-container heartbeat">
+  <!-- Title section with the settings icon on the right -->
+  <div class="title-container">
     <div class="title-flex">
       <h1>Pomodoro Timer</h1>
-      <!-- Icône et tooltip à droite du titre -->
+      <!-- Tooltip for the settings icon next to the title -->
       <div class="tooltip">
-        <em class="fas fa-cog" id="settings-icon">
-          <span class="tooltiptext">Reglages</span>
+        <em class="fas fa-cog" id="settings-icon" >
+          <!-- Tooltip text that appears on hover -->
+          <span class="tooltiptext">SETTINGS</span>
         </em>
       </div>
     </div>
   </div>
 
+  <!-- Main container for the timer and phase display -->
   <div class="container">
-    <!-- Timer et phase -->
+    <!-- Timer display -->
     <div id="timer">25:00</div>
-    <div id="phase">Phase de travail</div>
+    <!-- Display for the current phase (work or break) -->
+    <div id="phase">Work Phase</div>
   </div>
 
-  <!-- Bouton Démarrer/Réinitialiser -->
-  <button id="start-reset">
+  <!-- Start/Reset button -->
+  <button id="start-reset" aria-label="Name">
+    <!-- Play icon for the button (changes dynamically) -->
     <span class="fa-solid fa-play fa-bounce"></span>
   </button>
 
-  <!-- Fenêtre modale pour le formulaire -->
+  <!-- Modal window for settings form -->
   <div id="settings-modal" class="modal hidden">
     <div class="modal-content">
+      <!-- Close button for the modal -->
       <span class="close">&times;</span>
-      <h2>Paramètres</h2>
+      <h2>SETTINGS</h2>
+      <!-- Settings form for customizing work and break durations -->
       <form id="settings-form">
-        <label for="work-duration">Durée du travail (minutes) :</label>
-        <input type="number" id="work-duration" name="work-duration" value="25" min="1">
-    
-        <label for="break-duration">Durée de la pause (minutes) :</label>
-        <input type="number" id="break-duration" name="break-duration" value="5" min="1">
-    
-        <button type="submit">Appliquer</button>
+        <!-- Input for work duration -->
+        <label for="work-duration">Work Time (min):</label>
+        <input type="number" id="work-duration" name="work-duration" value="25" min="1" max="200">
+
+        <!-- Input for break duration -->
+        <label for="break-duration">Break Time (min):</label>
+        <input type="number" id="break-duration" name="break-duration" value="5" min="1" max="200">
+
+        <!-- Apply button to save the new settings -->
+        <button type="submit">Apply</button>
       </form>
     </div>
   </div>
 
+  <!-- Font Awesome icon kit -->
   <script src="https://kit.fontawesome.com/dfecf18b85.js" crossorigin="anonymous"></script>
 </body>
 </html>

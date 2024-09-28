@@ -25,16 +25,16 @@ function startTimer() {
       } else {
         if (isWorkPhase) {
           time = breakTime;
-          phaseDisplay.textContent = "Pause";
+          phaseDisplay.textContent = "Break";
           document.body.style.backgroundColor = "#99c5c4"; // Rouge pendant le travai
         } else {
           time = workTime;
-          phaseDisplay.textContent = "Phase de travail";
+          phaseDisplay.textContent = "Work Phase";
           document.body.style.backgroundColor = "#b84343"; // Rouge pendant le travai
         }
         isWorkPhase = !isWorkPhase;
       }
-    }, 1000);
+    }, 100);
   }
 }
 
@@ -45,7 +45,7 @@ function resetTimer() {
   isWorkPhase = true;
   time = workTime;
   updateTimerDisplay();
-  phaseDisplay.textContent = "Phase de travail";
+  phaseDisplay.textContent = "Work Phase";
   document.body.style.backgroundColor = "#b84343";
 }
 
@@ -55,7 +55,7 @@ startResetButton.addEventListener('click', () => {
     startResetButton.innerHTML = '<span class="fa-solid fa-play fa-bounce"></span>';
   } else {
     startTimer();
-    phaseDisplay.innerHTML = "Phase de travail";
+    phaseDisplay.innerHTML = "Work Phase";
     startResetButton.innerHTML = '<span class="fa-solid fa-arrow-rotate-left fa-bounce"></span>';
     document.body.style.backgroundColor = "#b84343";
   }
@@ -85,25 +85,35 @@ function initializeDurations() {
   updateTimerDisplay();
 }
 
-// Sauvegarder les nouvelles valeurs dans LocalStorage
+// Function to save the new durations and validate them
 function saveDurationsToLocalStorage() {
-  const workDuration = workDurationInput.value;
-  const breakDuration = breakDurationInput.value;
+  const workDuration = parseInt(workDurationInput.value);
+  const breakDuration = parseInt(breakDurationInput.value);
 
+  // Check if the durations exceed the maximum limit of 200 minutes
+  if (workDuration > 200 || breakDuration > 200) {
+    alert("Duration cannot exceed 200 minutes."); // Display an alert if the limit is exceeded
+    return; // Prevent saving if the limit is exceeded
+  }
+
+  // Save valid durations to localStorage
   localStorage.setItem('workTime', workDuration);
   localStorage.setItem('breakTime', breakDuration);
 
-  workTime = parseInt(workDuration) * 60;
-  breakTime = parseInt(breakDuration) * 60;
+  // Update work and break times in seconds
+  workTime = workDuration * 60;
+  breakTime = breakDuration * 60;
 
-  resetTimer();
+  resetTimer(); // Reset the timer with the new values
+  closeModal(); // Close the settings modal
 }
 
-// Gérer la soumission du formulaire
+// Event listener to handle form submission for settings
 settingsForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  saveDurationsToLocalStorage();
+  e.preventDefault(); // Prevent form reload
+  saveDurationsToLocalStorage(); // Save settings
 });
+
 
 // Initialiser les valeurs au chargement
 initializeDurations();
@@ -148,6 +158,11 @@ function saveDurationsToLocalStorage() {
 
   workTime = parseInt(workDuration) * 60;
   breakTime = parseInt(breakDuration) * 60;
+  // Check if the durations exceed the maximum limit of 200 minutes
+  if (workDuration > 200 || breakDuration > 200) {
+    alert("Duration cannot exceed 200 minutes."); // Display an alert if the limit is exceeded
+    return; // Prevent saving if the limit is exceeded
+  }
 
   resetTimer();
   closeModal();  // Ferme la modale après avoir appliqué les réglages
@@ -172,6 +187,7 @@ function initializeDurations() {
   time = workTime;  // Initialiser avec le temps de travail par défaut ou personnalisé
   updateTimerDisplay();
 }
+
 
 // Initialiser les valeurs au chargement
 initializeDurations();
