@@ -1,7 +1,6 @@
 # Pomodoro
 # Author : Tom CHOLOT
 # Version 2.0
-- There is another version with scriptV2.js which instead of a simple change of background color between each phase, there is a color gradient from red to green which takes place while the timer is running. The tag for using the 2nd version is in the comments in index.html at lign 18.
 
 https://15cf0408.github.io/Pomodoro/
 
